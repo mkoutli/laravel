@@ -13,12 +13,12 @@
 - Inside the project directory 
 ```run docker run --rm -v $(pwd):/app composer install```
 This creates an ephemeral container that will be bind-mounted to the current directory before being removed. This will copy the contents of your directory to the container and also ensure that the vendor folder (Composer creates inside the container) is copied to your current directory
-- The following command will generate a key and copy it to your .env file, ensuring that your user sessions and encrypted data remain secure:
-```docker-compose exec app php artisan key:generate```
 - To start all of the containers, create the volumes, and set up and connect the networks:
 ```docker-compose up -d```
 - Once the process is complete, use the following command to list all of the running containers:
 ```docker ps```
+- The following command will generate a key and copy it to your .env file, ensuring that your user sessions and encrypted data remain secure:
+```docker-compose exec app php artisan key:generate```
 
 ## Deploy with Kubernetes
 .....
