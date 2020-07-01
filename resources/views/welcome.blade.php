@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
+        <title>Covid-19 Images</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
@@ -61,6 +61,23 @@
             .m-b-md {
                 margin-bottom: 30px;
             }
+	    .row {
+		  display: flex;
+		  flex-wrap: wrap;
+		  padding: 0 4px;
+		}
+
+		/* Create two equal columns that sits next to each other */
+		.column {
+		  flex: 50%;
+		  padding: 0 4px;
+		}
+
+		.column img {
+		  margin-top: 8px;
+		  vertical-align: middle;
+		}
+
         </style>
     </head>
     <body>
@@ -81,10 +98,10 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Laravel
+                    Covid-19 Images
                 </div>
 
-                <div class="links">
+                <!--<div class="links">
                     <a href="https://laravel.com/docs">Docs</a>
                     <a href="https://laracasts.com">Laracasts</a>
                     <a href="https://laravel-news.com">News</a>
@@ -93,7 +110,34 @@
                     <a href="https://forge.laravel.com">Forge</a>
                     <a href="https://vapor.laravel.com">Vapor</a>
                     <a href="https://github.com/laravel/laravel">GitHub</a>
-                </div>
+                </div>-->
+		<div class="row">
+		  <div class="column">
+		    <img src="https://raw.githubusercontent.com/ieee8023/covid-chestxray-dataset/master/images/000001-12.jpg" style="width:128px;height:128px;">
+		    <img src="https://raw.githubusercontent.com/ieee8023/covid-chestxray-dataset/master/images/000001-17.jpg" style="width:128px;height:128px;">
+		    <img src="https://raw.githubusercontent.com/ieee8023/covid-chestxray-dataset/master/images/000001-19.jpg" style="width:128px;height:128px;">
+		    <img src="https://raw.githubusercontent.com/ieee8023/covid-chestxray-dataset/master/images/000001-2.jpg" style="width:128px;height:128px;">
+		    <img src="https://raw.githubusercontent.com/ieee8023/covid-chestxray-dataset/master/images/000001-24.jpg" style="width:128px;height:128px;">
+		    <img src="https://raw.githubusercontent.com/ieee8023/covid-chestxray-dataset/master/images/000001-27.jpg" style="width:128px;height:128px;">
+		    <img src="https://raw.githubusercontent.com/ieee8023/covid-chestxray-dataset/master/images/000001-3.png" style="width:128px;height:128px;">
+		  </div>
+		  <div class="column">
+		    <img src="https://raw.githubusercontent.com/ieee8023/covid-chestxray-dataset/master/images/000001-6.png" style="width:128px;height:128px;">
+		    <img src="https://raw.githubusercontent.com/ieee8023/covid-chestxray-dataset/master/images/000001-9-a.jpg" style="width:128px;height:128px;">
+		    <img src="https://raw.githubusercontent.com/ieee8023/covid-chestxray-dataset/master/images/000001-9-b.jpg" style="width:128px;height:128px;">
+		    <img src="https://raw.githubusercontent.com/ieee8023/covid-chestxray-dataset/master/images/000001.jpg" style="width:128px;height:128px;">
+		    <img src="https://raw.githubusercontent.com/ieee8023/covid-chestxray-dataset/master/images/000002-11-a.jpg" style="width:128px;height:128px;">
+		    <img src="https://raw.githubusercontent.com/ieee8023/covid-chestxray-dataset/master/images/000002-11-b.jpg" style="width:128px;height:128px;">
+		  </div>
+		  <div class="column">
+		    <img src="https://raw.githubusercontent.com/ieee8023/covid-chestxray-dataset/master/images/000002-14.jpg" style="width:128px;height:128px;">
+		    <img src="https://raw.githubusercontent.com/ieee8023/covid-chestxray-dataset/master/images/000002-16.jpg" style="width:128px;height:128px;">
+		    <img src="https://raw.githubusercontent.com/ieee8023/covid-chestxray-dataset/master/images/000002-19-a.jpg" style="width:128px;height:128px;">
+		    <img src="https://raw.githubusercontent.com/ieee8023/covid-chestxray-dataset/master/images/000002-19-b.jpg" style="width:128px;height:128px;">
+		    <img src="https://raw.githubusercontent.com/ieee8023/covid-chestxray-dataset/master/images/000002-2.jpg" style="width:128px;height:128px;">
+		    <img src="https://raw.githubusercontent.com/ieee8023/covid-chestxray-dataset/master/images/000002-29.jpg" style="width:128px;height:128px;">
+		  </div>
+		</div>
             </div>
         </div>
     </body>
