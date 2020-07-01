@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    service: app
+  name: app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      service: app
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        service: app
+    spec:
+      containers:
+      - name : app
+        image: my_app:01
+        imagePullPolicy: IfNotPresent
+        volumeMounts:
+        - mountPath: /var/www
+          name: app-claim0
+        workingDir: /var/www
+      restartPolicy: Always
+      volumes:
+      - name: app-claim0
+        hostPath:
+           path: "./"

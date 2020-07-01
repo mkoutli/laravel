@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    service: db
+  name: db
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      service: db
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        service: db
+    spec:
+      containers:
+      - env:
+        - name: MYSQL_DATABASE
+          value: laravel
+        - name: MYSQL_ROOT_PASSWORD
+          value: your_mysql_root_password
+        image: mysql:5.7.22
+        name: db
+        ports:
+        - containerPort: 3306
+        resources: {}
+        tty: true
+        volumeMounts:
+        - mountPath: /var/lib/mysql/
+          name: dbdata
+      restartPolicy: Always
+      volumes:
+      - name: dbdata
+        persistentVolumeClaim:
+          claimName: dbdata

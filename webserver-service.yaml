@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    service: webserver
+  name: webserver
+spec:
+  type: NodePort
+  ports:
+  - name: "81"
+    port: 81
+    targetPort: 80
+  - name: "444"
+    port: 444
+    targetPort: 443
+  selector:
+    service: webserver
+status:
+  loadBalancer: {}
