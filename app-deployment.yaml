@@ -19,6 +19,8 @@ spec:
       containers:
       - name : app
         image: my_app:01
+        ports:
+        - containerPort: 9000
         imagePullPolicy: IfNotPresent
         volumeMounts:
         - mountPath: /var/www

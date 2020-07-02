@@ -24,5 +24,19 @@ spec:
         - containerPort: 443
         resources: {}
         tty: true
+        volumeMounts:
+        - mountPath: /etc/nginx # mount nginx-conf volumn to /etc/nginx
+          readOnly: true
+          name: nginx-conf
+        - mountPath: /var/log/nginx
+          name: log
       restartPolicy: Always
+      volumes:
+      - name: nginx-conf
+        configMap:
+          name: nginx-conf # place ConfigMap `nginx-conf` on /etc/nginx
+      - name: log
+        emptyDir: {}
+          
+      
       
