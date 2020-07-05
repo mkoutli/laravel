@@ -3,6 +3,10 @@ FROM php:7.2-fpm
 # Copy composer.lock and composer.json
 COPY composer.lock composer.json /var/www/
 
+# Copy existing application directory contents for kubernetes deployment
+RUN mkdir /app
+COPY . /app
+
 # Set working directory
 WORKDIR /var/www
 
@@ -32,17 +36,18 @@ RUN docker-php-ext-install gd
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
 # Add user for laravel application
-RUN groupadd -g 1000 mk
-RUN useradd -u 1000 -ms /bin/bash -g mk mk
+RUN groupadd -g 1000 www
+RUN useradd -u 1000 -ms /bin/bash -g www www
 
 # Copy existing application directory contents
 COPY . /var/www
 
 # Copy existing application directory permissions
-COPY --chown=mk:mk . /var/www
+COPY --chown=www:www . /var/www
+COPY --chown=www:www . /app
 
-# Change current user to mk
-USER mk
+# Change current user to www
+USER www
 
 # Expose port 9000 and start php-fpm server
 EXPOSE 9000

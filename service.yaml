@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    service: php-myapp-server
+  name: php-myapp-server
+spec:
+  type: NodePort
+  ports:
+  - name: "88"
+    port: 88
+    targetPort: 80
+  - name: "445"
+    port: 445
+    targetPort: 443
+  selector:
+    service: php-myapp-server
